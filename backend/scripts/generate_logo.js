@@ -23,5 +23,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width
   <circle cx="50" cy="50" r="6" fill="${C.primary}"/>
 ${lines}${dots}</svg>`;
 
-fs.writeFileSync('../public/logo.svg', svg);
-console.log("public/logo.svg generated successfully.");
+const path = require('path');
+const logoPath = path.join(__dirname, '../../public/logo.svg');
+fs.writeFileSync(logoPath, svg);
+console.log("public/logo.svg generated successfully at " + logoPath);
